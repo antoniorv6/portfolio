@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/additional_styles.css">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyC1y0Zp2HBA8cGE9GErhy2fauqhGcpnwiE",
+        authDomain: "personaportfolio-eab8c.firebaseapp.com",
+        projectId: "personaportfolio-eab8c",
+        storageBucket: "personaportfolio-eab8c.appspot.com",
+        messagingSenderId: "480363461398",
+        appId: "1:480363461398:web:1c8a4c1902c72ab1366e37",
+        measurementId: "G-SM3EPCM4KR"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
+
+    <script src="assets/js/firebase.js" defer></script>
+</head>
+<body>
+    <!-- MAIN MENU -->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">Antonio R.V</a>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="portfolio.html" class="nav__link active">Projects</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">CV</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Latest News</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+    <section class="work section" id="work">
+        <h1 class="section-title">Projects</h1>
+        
+        <h3 class="projects_header">Research projects & publications</h3>
+
+            <div class="work__container bd-grid" id="publications_container">
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
