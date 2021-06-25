@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/additional_styles.css">
+    <link rel="stylesheet" href="assets/css/modals.css">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
 
@@ -61,14 +62,32 @@
     </header>
 
     <main class="l-main">
+    
     <section class="work section" id="work">
         <h1 class="section-title">Projects</h1>
-        
-        <h3 class="projects_header">Research projects & publications</h3>
 
-            <div class="work__container bd-grid" id="publications_container">
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content" id="modalContent">
+        <span class="close">&times;</span>
+    </div>
+
+    </div>
+        
+    <h3 class="projects_header">Research projects & publications</h3>
+        <div class="work__container bd-grid" id="publications_container">
+    </div>
+    </section>
+
+    <section class="work section" id="work">
+        <h3 class="projects_header">Software development projects</h3>
+
+            <div class="work__container bd-grid" id="software_container">
             </div>
-        </section>
+    </section>
+
     </main>
 
     <script src="https://unpkg.com/scrollreveal"></script>
