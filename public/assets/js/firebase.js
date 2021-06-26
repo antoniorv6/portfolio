@@ -81,19 +81,26 @@ function getProject(title)
     let unsubscribe_pub = projectsRef.where('title', '==', title).onSnapshot(querySnapshot => {
         const docitems = querySnapshot.docs.map(doc => {
             let completeString = ` <span class="close" onclick="closeModal()">&times;</span>
-                                   <h2>${doc.data().title}</h2>
-                                   <br>
-                                   <p><b>Developed with/for: </b>: ${doc.data().team}</p>
-                                   <p><b>Publishing Date</b>: ${Date(doc.data().date)}</p>
-                                   <p><b>Description</b>: ${doc.data().description}</p>
-                                   <p><b>Contributions</b>: ${doc.data().contributions}</p>
-                                   <br>
-                                   <a href="${doc.data().codeURL}" class="button">Get the code <i class='bx bxl-github' ></i></a>`
+                                   <h2>${doc.data().title}</h2>`
+
+            if(doc.data().award != undefined)
+            {
+              completeString += `<h4><i class='bx bxs-medal'></i> This project was awarded with: ${doc.data().award}</h4>`
+            }
+            
+            completeString += `
+            <p><b>Developed with/for: </b>: ${doc.data().team}</p>
+            <p><b>Publishing Date</b>: ${Date(doc.data().date)}</p>
+            <p><b>Description</b>: ${doc.data().description}</p>
+            <p><b>Contributions</b>: ${doc.data().contributions}</p>
+            <br>
+            <a href="${doc.data().codeURL}" class="button">Get the code <i class='bx bxl-github' ></i></a>`
 
             if(doc.data().videoURL != undefined)
             {
               completeString += `<p><b>Demo video</b>:<br> <iframe width="560" height="315" src="${doc.data().videoURL}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
             }
+
 
             let toolsString = `<p><b>Used tools</b>: <ul>`;
             const technologies = doc.data().tools;
