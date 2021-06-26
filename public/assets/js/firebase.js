@@ -2,14 +2,19 @@ console.log(firebase)
 
 const db = firebase.firestore();
 const publicationsList = document.getElementById("publications_container");
+const projectsList = document.getElementById("software_container")
 
 let publicationsRef;
+let projectsRef;
 let unsubscribe;
 let modalContentElement;
 
 modalContentElement = document.getElementById("modalContent")
 
 publicationsRef = db.collection('publications');
+projectsRef = db.collection('projects');
+
+
 unsubscribe = publicationsRef.orderBy('date', 'desc').onSnapshot(querySnapshot => {
 const items = querySnapshot.docs.map(doc => {
     return `<div class="work__img" onclick="getPublication(\'${(doc.data().title)}\')">
@@ -17,20 +22,22 @@ const items = querySnapshot.docs.map(doc => {
                 <img src=${doc.data().imageURL} alt="">
             </div>`
 })
-console.log(items);
 publicationsList.innerHTML = items.join('');
+});
+
+unsubscribe_projects = projectsRef.orderBy('date', 'desc').onSnapshot(querySnapshot => {
+const items = querySnapshot.docs.map(doc => {
+    return `<div class="work__img" onclick="getPublication(\'${(doc.data().title)}\')">
+                <h3 class="caption">${doc.data().title}</h3>
+                <img src=${doc.data().imageURL} alt="">
+            </div>`
+})
+console.log(items);
+projectsList.innerHTML = items.join('');
 });
 
 
 var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
 
 // When the user clicks on <span> (x), close the modal
 function closeModal() {
