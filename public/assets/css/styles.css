@@ -57,6 +57,7 @@ body{
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
+  background-color: aliceblue;
 }
 h1,h2,p{
   margin: 0;
@@ -244,7 +245,7 @@ img{
   justify-self: center;
 }
 .about__img img{
-  width: 200px;
+  width: 500px;
   border-radius: .5rem;
 }
 
@@ -312,6 +313,7 @@ img{
   box-shadow: 0 4px 25px rgba(14,36,49,.15);
   border-radius: .5rem;
   overflow: hidden;
+  background-color: white;
 }
 .work__img img{
   transition: 1s;
@@ -466,7 +468,7 @@ img{
     text-align: initial;
   }
   .about__img img{
-    width: 300px;
+    width: 500px;
   }
   .work__container{
     grid-template-columns: repeat(3, 1fr);

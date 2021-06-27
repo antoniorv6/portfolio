@@ -96,6 +96,11 @@ function getProject(title)
             <br>
             <a href="${doc.data().codeURL}" class="button">Get the code <i class='bx bxl-github' ></i></a>`
 
+            if(doc.data().interestURL != undefined)
+            {
+              completeString += `<p><b>URL</b>:<br> <a href=http://${doc.data().interestURL}>${doc.data().interestURL}</a></p>`
+            }
+
             if(doc.data().videoURL != undefined)
             {
               completeString += `<p><b>Demo video</b>:<br> <iframe width="560" height="315" src="${doc.data().videoURL}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
